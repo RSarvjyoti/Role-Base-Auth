@@ -46,4 +46,20 @@ const createMusic = async (req, res) => {
     
 }
 
-module.exports = {createMusic}
+const getAllMusics = async (req, res) => {
+    try{
+        const musics = await musicModel.find().populate("artist");
+        res.status(200).json({
+          message:"Musics fetched!",
+          musics:musics
+        })
+    }catch(err){
+        console.log(err);
+        
+        res.status(500).json({
+            message:"Internal server error"
+        })
+    }
+}
+
+module.exports = {createMusic, getAllMusics}
