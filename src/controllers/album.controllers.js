@@ -43,4 +43,12 @@ const createAlbum = async (req, res) => {
 
 }
 
-module.exports = { createAlbum }
+const getAllAlbum = async (req, res)=> {
+    const album = await albumModel.find().populate()
+    res.status(200).json({
+        message: "Album fetched",
+        album
+    })
+}
+
+module.exports = { createAlbum , getAllAlbum}
