@@ -7,7 +7,7 @@ const albumSchama = new Schema({
     },
     musics:[{
         type: Schema.Types.ObjectId,
-        ref:"music"
+        ref:"musics"
     }],
     artist:{
         type:Schema.Types.ObjectId,

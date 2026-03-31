@@ -1,30 +1,28 @@
 const albumModel = require("../models/album.model");
-const jwt = require("jsonwebtoken")
-require("dotenv").config();
 
 const createAlbum = async (req, res) => {
-    const token = req.cookie.token;
-
-    if(!token){
-        res.status(401).json({
-            message:"Unauthorized"
-        })
-    }
+    // const token = req.cookies.token;
+    
+    // if(!token){
+    //     res.status(401).json({
+    //         message:"Unauthorized"
+    //     })
+    // }
 
     try{
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        if(decoded.role !== "artist"){
-            res.status(403).json({
-                message :"You don't have access to create album"
-            })
-        }
+        // const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        // if(decoded.role !== "artist"){
+        //     res.status(403).json({
+        //         message :"You don't have access to create album"
+        //     })
+        // }
 
         const {title, musics} = req.body;
         const album = await albumModel.create({
             title,
-            artist:decoded.id,
-            music: musics
+            artist:req.user.id,
+            musics: musics
         })
 
         res.status(201).json({
@@ -33,7 +31,7 @@ const createAlbum = async (req, res) => {
                 id:album._id,
                 title:album.title,
                 artist:album.artist,
-                music:album.musics
+                musics:album.musics
             }
         })
     }catch(err){
