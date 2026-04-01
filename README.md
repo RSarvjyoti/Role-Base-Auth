@@ -99,18 +99,13 @@ The server will run on `http://localhost:3001`
 ### Music Routes (`/api/music`)
 
 - `GET /` - Get all music tracks
-- `GET /:id` - Get specific music track
 - `POST /` - Create new music track (authenticated)
-- `PUT /:id` - Update music track
-- `DELETE /:id` - Delete music track
 
 ### Album Routes (`/api/album`)
 
 - `GET /` - Get all albums
 - `GET /:id` - Get specific album
 - `POST /` - Create new album (authenticated)
-- `PUT /:id` - Update album
-- `DELETE /:id` - Delete album
 
 ## 🔐 Authentication & Authorization
 
@@ -175,7 +170,3 @@ npm run test:watch   # Run tests in watch mode
 2. Make your changes
 3. Write/update tests
 4. Submit a pull request
-
-## 📄 License
-
-ISC
