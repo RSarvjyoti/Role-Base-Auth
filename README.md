@@ -92,7 +92,7 @@ The server will run on `http://localhost:3001`
 
 ### Authentication Routes (`/api/auth`)
 
-- `POST /signup` - Create a new user account
+- `POST /register` - Create a new user account
 - `POST /login` - Login and receive JWT token
 - `POST /logout` - Logout and clear session
 
