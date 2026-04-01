@@ -72,9 +72,7 @@ npm install
 ```env
 PORT=3001
 DB_URL=mongodb://your_database_url
-IMAGEKIT_PUBLIC_KEY=your_imagekit_public_key
 IMAGEKIT_PRIVATE_KEY=your_imagekit_private_key
-IMAGEKIT_URL_ENDPOINT=your_imagekit_url_endpoint
 JWT_SECRET=your_jwt_secret_key
 ```
 
